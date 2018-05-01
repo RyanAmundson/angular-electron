@@ -1,0 +1,22 @@
+<div class="generic-card" [ngClass]="{'active':active}" [style.color]="color" [style.border-color]="color">
+  <div class="block-details" *ngIf="height">
+    <div class="block-height">
+      {{height}}
+    </div>
+    <div class="base-target">
+      {{baseTarget}}
+    </div>
+  </div>
+  <div class="time-details">
+    <div class="elapsed">
+      {{elapsedTime | date:'mm:ss'}}
+    </div>
+    <div class="deadline">
+      {{deadlineAsDate | date:'mm:ss'}}
+    </div>
+  </div>
+  <div *ngIf="!height">
+    Waiting for data...
+  </div>
+  <div class="overlay" [style.width.px]="percentComplete"></div>
+</div>

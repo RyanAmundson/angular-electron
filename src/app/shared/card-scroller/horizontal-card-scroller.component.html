@@ -1,0 +1,15 @@
+<div class="horizontal-card-scroller">
+  <div *ngIf="scrollContainer?.nativeElement?.scrollLeft > 0" class="scroll-left" (click)="scroll($event,'left',fixedWidth*2)">
+    <i class="fa fa-chevron-left"></i>
+  </div>
+  <div *ngIf="scrollContainer?.nativeElement?.scrollLeft < (scrollContainer?.nativeElement?.scrollWidth - scrollContainer?.nativeElement?.offsetWidth - 10)"
+    class="scroll-right" (click)="scroll($event,'right',fixedWidth*2)">
+    <i class="fa fa-chevron-right"></i>
+  </div>
+  <div #scrollContent class="scroll-content">
+    <div (click)="cardClicked(card)" #scrollItem  class="item" *ngFor="let card of cardMap">
+        <!-- [@cardFlipIn]="card.status" -->
+      <ng-container *ngComponentOutlet="cardHolder;content: [[card.view]];"></ng-container>
+    </div>
+  </div>
+</div>

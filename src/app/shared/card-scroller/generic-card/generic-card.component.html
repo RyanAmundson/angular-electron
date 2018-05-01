@@ -1,0 +1,15 @@
+<div class="generic-card" [ngClass]="{'active':active}" [style.color]="color" [style.border-color]="color">
+  <div>
+    <div class="card-title {{color}}">
+      <i class="fa fa-{{icon}}" aria-hidden="true"></i>
+      {{title}}
+    </div>
+    <div class="card-type">
+      {{date}}
+
+    </div>
+    <div class="card-type">
+      {{type}}
+    </div>
+  </div>
+</div>

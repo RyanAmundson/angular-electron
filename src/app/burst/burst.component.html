@@ -1,0 +1,147 @@
+<div class="main-content">
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header" data-background-color="orange">
+            <i class="material-icons">content_copy</i>
+          </div>
+          <div class="card-content">
+            <p class="category">Pool Info</p>
+            <h3 class="title">50/50
+              <small>W/P</small>
+            </h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons text-danger">warning</i>
+              <a href="">Get More Space...</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header" data-background-color="green">
+            <i class="material-icons">store</i>
+          </div>
+          <div class="card-content">
+            <p class="category">Network Difficulty</p>
+            <h3 class="title">{{networkDifficulty}}
+              <small>TB</small>
+            </h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">date_range</i> Last 24 Hours
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header" data-background-color="red">
+            <i class="material-icons">info_outline</i>
+          </div>
+          <div class="card-content">
+            <p class="category">Effective Capacity</p>
+            <h3 class="title">{{effectiveCapacity}}
+                <small>TB</small>
+            </h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">local_offer</i> Tracked from Github
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header" data-background-color="blue">
+            <i class="fa fa-twitter"></i>
+          </div>
+          <div class="card-content">
+            <p class="category">Pending Payout</p>
+            <h3 class="title">{{pendingPayout}}
+              <small>Burst</small>
+            </h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">update</i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+          <div class="card-header card-chart">
+            <horizontal-card-scroller>
+              <burst-block-card *ngFor="let block of completedBlocks" #cardListItem [id]="block?.height" [height]="block?.height" [baseTarget]="block?.baseTarget"
+                [created]="block?.created | date" [bestDeadline]="block?.deadline">
+              </burst-block-card>
+
+              <burst-block-card #cardListItem [id]="currentBlock?.height" [height]="currentBlock?.height" [baseTarget]="currentBlock?.baseTarget"
+                [created]="currentBlock?.created | date" [bestDeadline]="currentBlock?.deadline">
+              </burst-block-card>
+            </horizontal-card-scroller>
+          </div>
+          <div class="card-content">
+            <h4 class="title">Recent Blocks</h4>
+            <p class="category">block data</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">access_time</i> deadline: {{currentBlock?.deadline | date}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+            <div class="card" >
+                <div class="card-header" data-background-color="orange">
+                    <h4 class="title">All Miners</h4>
+                    <!-- <p class="category"></p> -->
+                </div>
+                <div class="card-content table-responsive">
+                    <table class="table table-hover">
+                        <thead class="text-warning">
+                            <tr>
+                              <th>Name</th>
+                              <th>Address</th>
+                              <th>Pending</th>
+                              <th>Historical Shares</th>
+                              <th>Effective Capacity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card" >
+                <div class="card-header card-chart" data-background-color="orange">
+                    <div class="ct-chart" id="emailsSubscriptionChart"></div>
+                </div>
+                <div class="card-content">
+                    <h4 class="title">Email Subscriptions</h4>
+                    <p class="category">Last Campaign Performance</p>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">access_time</i> campaign sent 2 days ago
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
