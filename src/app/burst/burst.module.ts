@@ -9,6 +9,12 @@ import { AppModule } from '../app.module';
 import { SharedModule } from '../shared/shared.module';
 import {MatCardModule} from '@angular/material/card';
 import { BurstBlockCardComponent } from './burst-block-card/burst-block-card.component';
+import { BurstBlockService } from './services/burst-block.service';
+import { BurstNetworkService } from './services/burst-network.service';
+import { BurstUserService } from './services/burst-user.service';
+import { HttpClientModule } from '@angular/common/http';
+import { JsonpModule } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
 
@@ -22,10 +28,16 @@ import { BurstBlockCardComponent } from './burst-block-card/burst-block-card.com
       MatMenuModule,
       MatSidenavModule,
       SharedModule,
-      MatCardModule
+      MatCardModule,
+      HttpClientModule,
+      JsonpModule,
+      BrowserModule,
     ],
     providers: [
-      CryptoGuruService
+      CryptoGuruService,
+      BurstBlockService,
+      BurstNetworkService,
+      BurstUserService
     ]
 })
 export class BurstModule { }

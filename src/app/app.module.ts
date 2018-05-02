@@ -33,6 +33,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { UpgradeComponent } from './upgrade/upgrade.component';
 import { ComponentsModule } from './components/components.module';
 import { MockData } from './services/mock-data.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {

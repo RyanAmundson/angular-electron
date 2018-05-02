@@ -2,16 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HorizontalCardScrollerComponent, CardHolder } from './card-scroller/horizontal-card-scroller.component';
 import { GenericCardComponent } from './card-scroller/generic-card/generic-card.component';
-import { DoughnutChartComponent, PieChartComponent, BarChartComponent } from 'angular-d3-charts'; // this is needed!
+// import { DoughnutChartComponent, PieChartComponent, BarChartComponent } from 'angular-d3-charts'; // this is needed!
 
 @NgModule({
   declarations: [
     HorizontalCardScrollerComponent,
     CardHolder,
     GenericCardComponent,
-    DoughnutChartComponent,
-    PieChartComponent,
-    BarChartComponent,
+    // DoughnutChartComponent,
+    // PieChartComponent,
+    // BarChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,9 +20,9 @@ import { DoughnutChartComponent, PieChartComponent, BarChartComponent } from 'an
     GenericCardComponent,
     HorizontalCardScrollerComponent,
     CardHolder,
-    DoughnutChartComponent,
-    PieChartComponent,
-    BarChartComponent,
+    // DoughnutChartComponent,
+    // PieChartComponent,
+    // BarChartComponent,
   ],
   entryComponents:[
     CardHolder
